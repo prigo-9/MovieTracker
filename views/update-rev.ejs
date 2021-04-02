@@ -1,0 +1,59 @@
+<html>
+ <%- include("./components/imp-link.ejs") %>
+ <link rel="stylesheet" href="/app.css">
+ <head>
+  
+  <title > <%= title %></title>
+ </head>
+
+ <body>
+  <%- include('./components/nav.ejs') %>
+
+  
+ <div class="imageContainer"><div id="movie-bar"><div>Hola Movie Maniacs</div> 
+<div> <h2> Add reviews for your favourite movies</h2></div></div></div>
+<h2> Edit review</h2>
+<hr>
+<div class="container" style="border:1px solid #cecece; padding: 5%; " >
+  <form action="/update-info" method="POST">
+   <input type="hidden" name="_id" value=<%= existing_info._id %> >
+   <div class="form-group" style="padding-top: 2%;">
+     <label for="mname">Movie Name</label>
+     <input type="text" class="form-control" id="mname"  name="mname" placeholder= "<%=  existing_info.m_name %>" >
+   </div>
+   <div class="form-group" style="padding-top: 2%;">
+     <label for="mrev">Movie Review</label>
+     <textarea class="form-control" name="mrev" id="mrev" placeholder= "<%= existing_info.m_review %>"
+     ></textarea>
+   </div>
+   <div class="form-group row" style="padding-top: 2%;">
+    <label for="mdate" class="col-2 col-form-label">Date</label>
+    <div class="col-10">
+      <input class="form-control" type="date" value="2020-04-02" id="mdate"  name="mdate">
+    </div>
+  </div>
+
+  <h6> Give a rating to this movie</h6>
+
+  <span class="star-rating">
+   <input type="radio" name="rating" value="1"><i></i>
+   <input type="radio" name="rating" value="2"><i></i>
+   <input type="radio" name="rating" value="3"><i></i>
+   <input type="radio" name="rating" value="4"><i></i>
+   <input type="radio" name="rating" value="5"><i></i>
+   <input type="radio" name="rating" value="6"><i></i>
+   <input type="radio" name="rating" value="7"><i></i>
+   <input type="radio" name="rating" value="8"><i></i>
+   <input type="radio" name="rating" value="9"><i></i>
+   <input type="radio" name="rating" value="10"><i></i>
+ </span>
+ <!-- <button type="submit" class="btn btn-default" id="submit_button" >Enter</button> -->
+<div>
+ <button  type="submit" class="btn btn-success">Submit</button>  
+</div>
+ </form>
+</div>
+  <%- include('./components/footer.ejs') %>  
+ </body>
+ <%- include("./components/imp-script.ejs") %>
+</html>

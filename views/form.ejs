@@ -1,0 +1,30 @@
+<html>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=5">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<body>
+<h2> Add User Profile</h2>
+
+<form id="nameForm" action = "/form" method = "post" name = "something">
+ <div class="form-group">
+  <div>
+     <label for="nameInput">Enter your Name: </label>
+     <input type="fname" class="form-control" id="playerName" placeholder="Name" name = "playerName">
+    </div>
+    <div>
+     <label for="ageInput">Enter your Age </label>
+     <input type="age" class="form-control" id="playerAge" placeholder="Age" name = "playerAge">
+    </div>
+    <div>
+     <label for="mdInput">Enter your Social media Profile </label>
+     <input type="md" class="form-control" id="playermd" placeholder="https://www.instagram.com/georgenotfound/?hl=en" name = "playermd">
+    </div>
+ </div>
+ <button type="submit" class="btn btn-default" id="submit_button" >Enter</button>
+ </form>
+
+</body>
+
+</html>

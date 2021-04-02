@@ -1,0 +1,78 @@
+
+<html>
+  
+<head>
+ <title > <%= title %></title>
+ <%- include("./components/imp-link.ejs") %>
+
+
+</head>
+<body>
+<% const name = 'mario' %>
+
+<%- include('./components/nav.ejs') %>
+<h2> All the movies I have seen</h2>
+
+
+<% if( reviews.length > 0 ){ %>
+<% reviews.forEach(b =>{ %>
+ <!-- <div class ="container">
+ <div class ="row"> 
+  <div class="col-md-4">
+<h1><%= b.title %></h1>
+  </div>
+  
+  <div class="col-md-4">
+<h1><%= b.content %></h1>
+</div>
+</div>
+</div> -->
+<div class="card border-primary mb-3" style="max-width: 60rem; margin-left: 20px;">
+ <div class="card-header">
+  <h3> <%= b.m_name %> </h3>
+ </div>
+ <div class="card-body">
+   <h5 class="card-title"><%= b.m_review %></h5>
+   
+   <a href="#" class="btn btn-primary">Watched On : <%= b.watch_date.toDateString() %></a>
+<hr>
+<div class="row">
+ 
+ <div class="col-md-4">
+  <div class="container">
+   <h3>
+  <span class="badge badge-dark">Star rating : <%= b.star_rating %>  
+   <i class="fas fa-star"></i>
+
+  </span>
+  </h3>
+
+ </div>
+ </div>
+ <div class="col-md-4">
+ 
+  <a  href="/update/<%= b._id %>" class="btn btn-success btn-large rounded-0" type="button" id="edit-rev" ><i class="fa fa-edit " ></i> Edit Review </a>
+ 
+ </div>
+ <div class="col-md-4">
+  <a href="/del-rev/<%= b._id %>" class="btn btn-danger btn-large rounded-0" type="button" ><i class="fa fa-trash "></i> Delete Review </a>
+ 
+ </div>
+</div>
+
+ </div>
+</div>
+
+ <% }) ; %>
+ 
+
+ <% } %>
+ <%- include('./components/footer.ejs') %>
+ <%- include("./components/imp-script.ejs") %>
+
+ 
+ <script src="/script.js"></script>
+</body>
+
+
+</html>
